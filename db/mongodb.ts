@@ -13,7 +13,9 @@ let clientPromise: Promise<MongoClient>;
 // Only initialize MongoDB client if we have a valid URI
 function initializeClient() {
   if (!process.env.MONGODB_URI) {
-    console.warn("MONGODB_URI not defined, using default local connection");
+    console.warn("MONGODB_URI not defined. MongoDB features will be disabled.");
+    // Return a rejected promise to indicate MongoDB is not available
+    return Promise.reject(new Error("MongoDB not configured"));
   }
   
   try {
@@ -25,6 +27,7 @@ function initializeClient() {
     return Promise.reject(error);
   }
 }
+
 if (process.env.NODE_ENV === "development") {
   if (!global._mongoClientPromise) {
     global._mongoClientPromise = initializeClient();
