@@ -31,7 +31,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   const [colorListType, setColorListType] = useState(0);
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setColorListType(0);
