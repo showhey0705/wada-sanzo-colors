@@ -10,20 +10,23 @@ const options = {
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
 
-// Only initialize MongoDB client if we have a valid URI
-function initializeClient() {
+// MongoDB接続を初期化する関数
+function initializeClient(): Promise<MongoClient> {
   if (!process.env.MONGODB_URI) {
     console.warn("MONGODB_URI not defined. MongoDB features will be disabled.");
-    // Return a rejected promise to indicate MongoDB is not available
+    // MongoDBが設定されていない場合は拒否されたPromiseを返す
     return Promise.reject(new Error("MongoDB not configured"));
   }
   
   try {
     client = new MongoClient(uri, options);
-    return client.connect();
+    return client.connect().catch((error) => {
+      console.error("MongoDB connection failed:", error);
+      // 接続に失敗した場合も拒否されたPromiseを返す
+      return Promise.reject(new Error("MongoDB connection failed"));
+    });
   } catch (error) {
     console.error("Failed to initialize MongoDB client:", error);
-    // Return a rejected promise to maintain the Promise<MongoClient> type
     return Promise.reject(error);
   }
 }
