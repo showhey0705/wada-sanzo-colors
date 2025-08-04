@@ -1,0 +1,75 @@
+{
+  "header": {
+    "title": "A Dictionary of Color Combinations",
+    "profile": "Profile"
+  },
+  "navigation": {
+    "inspiration": "Inspiration",
+    "collection": "Collection",
+    "favorites": "Favorites",
+    "about": "About",
+    "colors": "Colors",
+    "combinations": "Combinations"
+  },
+  "buttons": {
+    "donate": "Donate",
+    "signInWithGoogle": "Sign in with Google",
+    "signInWithApple": "Sign in with Apple",
+    "signOut": "Sign Out",
+    "findFromCollection": "Find from collection",
+    "randomColor": "Random Color",
+    "randomCombination": "Random Combination",
+    "colorPicker": "Color Picker",
+    "backgroundCombination": "Background Combination"
+  },
+  "messages": {
+    "noFavoritesColors": "No favorite colors.",
+    "noFavoritesCombinations": "No favorite combinations.",
+    "sessionExpired": "Your session expired. Please login again.",
+    "signedInAs": "You are signed in as \"{{name}}\".",
+    "signedInWith": "You are signed in with {{provider}}.",
+    "notSignedIn": "You are not signed in.",
+    "signingOut": "Signing out...",
+    "savedToFavorites": "Saved to Favorites",
+    "removedFromFavorites": "Removed from Favorites",
+    "copyHex": "HEX-code saved to clipboard.",
+    "copyRgb": "RGB-code saved to clipboard.",
+    "copyCmyk": "CMYK-code saved to clipboard.",
+    "copyLab": "LAB-code saved to clipboard."
+  },
+  "colorDetail": {
+    "loading": "Loading..."
+  },
+  "signInPage": {
+    "infoText1": "You can find your favorite Colors and Combinations under \"Favorites\".",
+    "infoText2": "After signing in, your favorites will be saved to your account so you can access them anytime, on any device via the website or on your phone via the iOS App.",
+    "infoText3": "Without signing in, favorites are only stored in your browser.",
+    "infoText4": "(This service is free, but i appreciate a donation for maintenance and development.)",
+    "privacyInfo": "Cookies are used to manage your login session after signing in with Google or Apple. These cookies are essential for authentication and are not used for tracking. Your name, email, and login provider are stored securely in a database to manage your account."
+  },
+  "aboutPage": {
+    "wadaSanzoHeadline": "Wada Sanzo",
+    "wadaSanzoText1": "Wada Sanzo (1883-1967) was a Japanese painter, costume designer and researcher who devoted his life to the study of color theory. He believed that color was not just a decorative element, but a powerful tool for communication and expression. Wada developed his own unique color system, which was intended to capture traditional Japanese perceptions of color. He also explored the use of color in different artistic mediums, such as painting, printmaking, and textile design. Wada's work on color theory had a significant impact on the development of modern graphic design in Japan. His teachings and philosophy influenced generations of designers and artists, and his ideas about color continue to be studied and applied in various fields today.",
+    "bookHeadline": "A Dictionary of Color Combinations Vol. 1",
+    "bookText1": "\"A Dictionary of Color Combinations Vol. 1\" is a collection of 348 color combinations based on 159 colors. This website offers an interactive adaptation of the collection that allows users to access and copy the CMYK, RGB, HEX, and LAB codes (Thanks to Matt DesLauriers). The original 6-volume work Haishoku Soukan (The complete collection of color combinations) by Wada Sanzo, from which the book is derived, was published from 1933 to 1934.",
+    "bookText2": "You can buy the \"A Dictionary of Color Combinations Vol. 1\" here on Amazon.",
+    "bookText3": "Or the \"Dictionary Of Color Combinations Volume 2\" here.",
+    "iosAppHeadline": "iOS App W.S. Colors",
+    "iosAppFeature1": "Use the built-in color scanner to match real-world colors with those from the collection and find harmonious combinations for your project.",
+    "iosAppFeature2": "Browse 348 harmonious color palettes from the original collection.",
+    "iosAppFeature3": "Instantly copy CMYK, RGB, HEX, and LAB values for any color or palette.",
+    "iosAppFeature4": "Save favorite palettes and access them on any other device via the website.",
+    "impressumHeadline": "Impressum",
+    "githubInfo": "GitHub: https://github.com/pung-one (if you want to support me please use the \"Donate\" button in the lower left corner)",
+    "sourceInfo": "Source of Digital Color Collection: https://github.com/mattdesl/dictionary-of-colour-combinations"
+  },
+  "colorPicker": {
+    "headline": "Pick a Color",
+    "button": "Find from collection",
+    "result": "The most similar color from the collection:"
+  },
+  "supportPage": {
+    "headline": "Support",
+    "contactInfo": "For any questions or feedback please contact support@wada-sanzo-colors.com."
+  }
+}

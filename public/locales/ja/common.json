@@ -1,0 +1,75 @@
+{
+  "header": {
+    "title": "色の組み合わせの辞典",
+    "profile": "プロフィール"
+  },
+  "navigation": {
+    "inspiration": "インスピレーション",
+    "collection": "コレクション",
+    "favorites": "お気に入り",
+    "about": "このサイトについて",
+    "colors": "色",
+    "combinations": "組み合わせ"
+  },
+  "buttons": {
+    "donate": "寄付",
+    "signInWithGoogle": "Googleでサインイン",
+    "signInWithApple": "Appleでサインイン",
+    "signOut": "サインアウト",
+    "findFromCollection": "コレクションから探す",
+    "randomColor": "ランダムな色",
+    "randomCombination": "ランダムな組み合わせ",
+    "colorPicker": "カラーピッカー",
+    "backgroundCombination": "背景の組み合わせ"
+  },
+  "messages": {
+    "noFavoritesColors": "お気に入りの色がありません。",
+    "noFavoritesCombinations": "お気に入りの組み合わせがありません。",
+    "sessionExpired": "セッションの有効期限が切れました。再度ログインしてください。",
+    "signedInAs": "「{{name}}」としてサインインしています。",
+    "signedInWith": "{{provider}}でサインインしています。",
+    "notSignedIn": "サインインしていません。",
+    "signingOut": "サインアウト中...",
+    "savedToFavorites": "お気に入りに保存されました",
+    "removedFromFavorites": "お気に入りから削除されました",
+    "copyHex": "HEXコードがクリップボードに保存されました。",
+    "copyRgb": "RGBコードがクリップボードに保存されました。",
+    "copyCmyk": "CMYKコードがクリップボードに保存されました。",
+    "copyLab": "LABコードがクリップボードに保存されました。"
+  },
+  "colorDetail": {
+    "loading": "読み込み中..."
+  },
+  "signInPage": {
+    "infoText1": "お気に入りの色と組み合わせは「お気に入り」で見つけることができます。",
+    "infoText2": "サインインすると、お気に入りはアカウントに保存され、ウェブサイトまたはiOSアプリを介して、いつでもどのデバイスからでもアクセスできます。",
+    "infoText3": "サインインしない場合、お気に入りはブラウザにのみ保存されます。",
+    "infoText4": "（このサービスは無料ですが、維持管理と開発のための寄付をいただけると幸いです。）",
+    "privacyInfo": "GoogleまたはAppleでサインインした後、ログインセッションを管理するためにCookieが使用されます。これらのCookieは認証に不可欠であり、追跡には使用されません。お客様の名前、メールアドレス、ログインプロバイダーは、アカウントを管理するために安全にデータベースに保存されます。"
+  },
+  "aboutPage": {
+    "wadaSanzoHeadline": "和田三造",
+    "wadaSanzoText1": "和田三造（1883-1967）は、色彩理論の研究に生涯を捧げた日本の画家、衣装デザイナー、研究者でした。彼は、色が単なる装飾要素ではなく、コミュニケーションと表現のための強力なツールであると信じていました。和田は、日本の伝統的な色彩感覚を捉えることを目的とした独自の色彩システムを開発しました。また、絵画、版画、テキスタイルデザインなど、さまざまな芸術媒体での色の使用も探求しました。和田の色彩理論に関する研究は、日本の近代グラフィックデザインの発展に大きな影響を与えました。彼の教えと哲学は、何世代ものデザイナーやアーティストに影響を与え、彼の色彩に関するアイデアは今日でもさまざまな分野で研究され、応用されています。",
+    "bookHeadline": "色の組み合わせの辞典 Vol. 1",
+    "bookText1": "「色の組み合わせの辞典 Vol. 1」は、159色に基づいた348の色の組み合わせのコレクションです。このウェブサイトは、ユーザーがCMYK、RGB、HEX、LABコードにアクセスしてコピーできる（Matt DesLauriersに感謝します）コレクションのインタラクティブな適応版を提供します。この本が派生した和田三造によるオリジナルの6巻の作品「配色総鑑」は、1933年から1934年にかけて出版されました。",
+    "bookText2": "「色の組み合わせの辞典 Vol. 1」はこちらのAmazonで購入できます。",
+    "bookText3": "または「色の組み合わせの辞典 Vol. 2」はこちら。",
+    "iosAppHeadline": "iOSアプリ W.S. Colors",
+    "iosAppFeature1": "内蔵のカラースキャナーを使用して、現実世界の色のコレクションと一致させ、プロジェクトに調和のとれた組み合わせを見つけます。",
+    "iosAppFeature2": "オリジナルのコレクションから348の調和のとれたカラーパレットを閲覧します。",
+    "iosAppFeature3": "任意の色またはパレットのCMYK、RGB、HEX、LAB値を即座にコピーします。",
+    "iosAppFeature4": "お気に入りのパレットを保存し、ウェブサイトまたは他のデバイスからアクセスします。",
+    "impressumHeadline": "インプレッサム",
+    "githubInfo": "GitHub: https://github.com/pung-one (私をサポートしたい場合は、左下の「寄付」ボタンを使用してください)",
+    "sourceInfo": "デジタルカラーコレクションのソース: https://github.com/mattdesl/dictionary-of-colour-combinations"
+  },
+  "colorPicker": {
+    "headline": "色を選ぶ",
+    "button": "コレクションから探す",
+    "result": "コレクションから最も似ている色:"
+  },
+  "supportPage": {
+    "headline": "サポート",
+    "contactInfo": "ご質問やフィードバックは support@wada-sanzo-colors.com までご連絡ください。"
+  }
+}

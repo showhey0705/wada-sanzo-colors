@@ -8,6 +8,7 @@ import { createContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { PiUserCircleLight } from "react-icons/pi";
 import { AnnouncementModal } from "../AnnouncementModal/AnnouncementModal";
+import { useTranslation } from 'react-i18next';
 
 export type ContextProps = {
   listType: "colors" | "combinations";
@@ -22,6 +23,7 @@ export const ActionContext = createContext<ContextProps | null>(null);
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const route = usePathname();
+  const { t } = useTranslation('common');
 
   const [listType, setListType] = useState<"colors" | "combinations">(
     "combinations"
@@ -41,9 +43,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header>
-        <Link href={"/"}>A Dictionary of Color Combinations</Link>
+        <Link href={"/"}>{t('header.title')}</Link>
         <SignInOutButton $isActive={route === "/signin"} href={"/signin"}>
-          <PiUserCircleLight /> <span>Profile</span>
+          <PiUserCircleLight /> <span>{t('header.profile')}</span>
         </SignInOutButton>
       </Header>
 
@@ -68,7 +70,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         href="https://www.paypal.com/donate/?hosted_button_id=PAFRAKM2HQWVY"
         target="_blank"
       >
-        Donate
+        {t('buttons.donate')}
       </DonationButton>
 
       <AnnouncementModal show={showModal} onClose={() => setShowModal(false)} />
