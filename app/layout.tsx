@@ -47,13 +47,19 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const googleClientId = process.env.GOOGLE_ID;
+  
+  if (!googleClientId) {
+    console.error("GOOGLE_ID environment variable is not set");
+  }
+
   return (
     <html lang="en" className={AvenirLTStdBook.variable}>
       <body>
         <StyledComponentsRegistry>
           <GlobalStyle />
 
-          <GoogleOAuthProvider clientId={process.env.GOOGLE_ID ?? ""}>
+          <GoogleOAuthProvider clientId={googleClientId || ""}>
             <AuthProvider>
               <FavoritesProvider>
                 <Layout>{children}</Layout>
