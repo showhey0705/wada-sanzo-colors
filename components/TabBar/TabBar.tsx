@@ -3,11 +3,9 @@
 import styled from "styled-components";
 import { useContext } from "react";
 import { ActionContext } from "../Layout/Layout";
-import { useTranslation } from 'react-i18next';
 
 export function TabBar() {
   const actionContext = useContext(ActionContext);
-  const { t } = useTranslation('common');
 
   if (!actionContext) return <h1>Loading...</h1>;
 
@@ -20,7 +18,7 @@ export function TabBar() {
         $isActive={listType === "colors"}
         onClick={() => setListType("colors")}
       >
-        {t('navigation.colors')}
+        Colors
       </StyledButton>
 
       <StyledButton
@@ -28,7 +26,7 @@ export function TabBar() {
         $isActive={listType === "combinations"}
         onClick={() => setListType("combinations")}
       >
-        {t('navigation.combinations')}
+        Combinations
       </StyledButton>
     </TabContainer>
   );

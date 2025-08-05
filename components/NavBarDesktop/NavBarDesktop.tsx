@@ -9,12 +9,10 @@ import ColorFilter from "../ColorFilter/ColorFilter";
 import { ActionContext } from "../Layout/Layout";
 import { usePathname } from "next/navigation";
 import { TfiArrowRight } from "react-icons/tfi";
-import { useTranslation } from 'react-i18next';
 
 export default function NavBarDesktop() {
   const [showTabBar, setShowTabBar] = useState(false);
   const route = usePathname();
-  const { t } = useTranslation('common');
 
   const actionContext = useContext(ActionContext);
 
@@ -33,7 +31,7 @@ export default function NavBarDesktop() {
           href={"/inspiration"}
           $isActive={route.includes("inspiration")}
         >
-          {t('navigation.inspiration')}
+          Inspiration
         </NavButton>
 
         <NavButton
@@ -44,7 +42,7 @@ export default function NavBarDesktop() {
           }}
         >
           <SlArrowRight />
-          {t('navigation.collection')}
+          Collection
         </NavButton>
 
         <SecondaryContainer $open={route === "/"}>
@@ -53,7 +51,7 @@ export default function NavBarDesktop() {
             $isActive={listType === "colors"}
           >
             <TfiArrowRight />
-            {t('navigation.colors')}
+            Colors
           </SecondaryNavButton>
 
           <SecondaryNavButton
@@ -61,7 +59,7 @@ export default function NavBarDesktop() {
             $isActive={listType === "combinations"}
           >
             <TfiArrowRight />
-            {t('navigation.combinations')}
+            Combinations
           </SecondaryNavButton>
         </SecondaryContainer>
 
@@ -73,7 +71,7 @@ export default function NavBarDesktop() {
           }}
         >
           <SlArrowRight />
-          {t('navigation.favorites')}
+          Favorites
         </NavButton>
 
         <SecondaryContainer $open={route === "/favorites"}>
@@ -82,7 +80,7 @@ export default function NavBarDesktop() {
             $isActive={listType === "colors"}
           >
             <TfiArrowRight />
-            {t('navigation.colors')}
+            Colors
           </SecondaryNavButton>
 
           <SecondaryNavButton
@@ -90,12 +88,12 @@ export default function NavBarDesktop() {
             $isActive={listType === "combinations"}
           >
             <TfiArrowRight />
-            {t('navigation.combinations')}
+            Combinations
           </SecondaryNavButton>
         </SecondaryContainer>
 
         <NavButton href={"/about"} $isActive={route === "/about"}>
-          {t('navigation.about')}
+          About
         </NavButton>
       </NavPages>
 
