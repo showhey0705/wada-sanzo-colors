@@ -8,6 +8,7 @@ import { createContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { PiUserCircleLight } from "react-icons/pi";
 import { AnnouncementModal } from "../AnnouncementModal/AnnouncementModal";
+import { LanguageToggle } from "../LanguageToggle/LanguageToggle";
 
 export type ContextProps = {
   listType: "colors" | "combinations";
@@ -42,9 +43,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <>
       <Header>
         <Link href={"/"}>A Dictionary of Color Combinations</Link>
-        <SignInOutButton $isActive={route === "/signin"} href={"/signin"}>
-          <PiUserCircleLight /> <span>Profile</span>
-        </SignInOutButton>
+        <HeaderActions>
+          <LanguageToggle />
+          <SignInOutButton $isActive={route === "/signin"} href={"/signin"}>
+            <PiUserCircleLight /> <span>Profile</span>
+          </SignInOutButton>
+        </HeaderActions>
       </Header>
 
       <ActionContext.Provider
@@ -89,6 +93,12 @@ const Header = styled.header`
   background-color: white;
   border-bottom: 1px solid black;
   padding: 10px 20px;
+`;
+
+const HeaderActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
 
 const SignInOutButton = styled(Link)<{ $isActive: boolean }>`
