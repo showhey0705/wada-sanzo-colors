@@ -40,19 +40,6 @@ export default function TranslationsProvider({
         });
     }
   }, [locale, namespaces, resources]);
-          import(`../public/locales/${language}/${namespace}.json`)
-        ))
-        .init({
-          lng: locale,
-          fallbackLng: 'en',
-          supportedLngs: ['en', 'ja'],
-          defaultNS: 'common',
-          fallbackNS: 'common',
-          ns: namespaces,
-          resources,
-        });
-    }
-  }, [locale, namespaces, resources]);
 
   return (
     <I18nextProvider i18n={i18nInstance.current}>
