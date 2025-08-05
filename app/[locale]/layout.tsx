@@ -17,7 +17,9 @@ type Props = {
 
 const i18nNamespaces = ['common'];
 
-export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
+  const { locale } = params;
   const { t } = await initTranslations(locale, i18nNamespaces);
 
   return {
@@ -52,7 +54,10 @@ const AvenirLTStdBook = localFont({
   variable: "--AvenirLTStdBook",
 });
 
-export default async function RootLayout({ children, params: { locale } }: Props) {
+export default async function RootLayout(props: Props) {
+  const params = await props.params;
+  const { locale } = params;
+  const { children } = props;
   const googleClientId = process.env.GOOGLE_ID;
   
   if (!googleClientId) {
