@@ -8,11 +8,9 @@ import ColorFilter from "../ColorFilter/ColorFilter";
 import { ActionContext } from "../Layout/Layout";
 import { TabBar } from "../TabBar/TabBar";
 import { usePathname } from "next/navigation";
-import { useTranslation } from 'react-i18next';
 
 export default function NavBar() {
   const route = usePathname();
-  const { t } = useTranslation('common');
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -62,18 +60,18 @@ export default function NavBar() {
           href={"/inspiration"}
           $isActive={route.includes("inspiration")}
         >
-          {t('navigation.inspiration')}
+          Inspiration
         </NavButton>
 
         <NavButton href={"/"} $isActive={route === "/"}>
-          {t('navigation.collection')}
+          Collection
         </NavButton>
 
         <NavButton href={"/favorites"} $isActive={route === "/favorites"}>
-          {t('navigation.favorites')}
+          Favorites
         </NavButton>
         <NavButton href={"/about"} $isActive={route === "/about"}>
-          {t('navigation.about')}
+          About
         </NavButton>
       </NavPages>
       {route === "/" || route === "/favorites" ? <TabBar /> : null}
