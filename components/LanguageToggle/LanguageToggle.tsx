@@ -1,23 +1,19 @@
 "use client";
 
 import styled from "styled-components";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export function LanguageToggle() {
-  const [currentLanguage, setCurrentLanguage] = useState<"en" | "ja">("en");
+  const { i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    const newLanguage = currentLanguage === "en" ? "ja" : "en";
-    setCurrentLanguage(newLanguage);
-    
-    // ここで実際の言語切り替えロジックを実装
-    // 例: i18nライブラリを使用する場合
-    console.log(`Language switched to: ${newLanguage}`);
+    const newLanguage = i18n.language === "en" ? "ja" : "en";
+    i18n.changeLanguage(newLanguage);
   };
 
   return (
     <ToggleButton onClick={toggleLanguage}>
-      {currentLanguage === "en" ? "日本語" : "English"}
+      {i18n.language === "en" ? "日本語" : "English"}
     </ToggleButton>
   );
 }

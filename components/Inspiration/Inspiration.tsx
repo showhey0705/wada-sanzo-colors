@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ColorObject, CombinationObject } from "@/lib/types";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   colors: ColorObject[];
@@ -15,6 +16,7 @@ export default function Inspiration({ colors, combinations }: Props) {
   const [randomCombination, setRandomCombination] = useState<CombinationObject>(
     combinations[276]
   );
+  const { t } = useTranslation();
 
   const router = useRouter();
 
@@ -39,7 +41,7 @@ export default function Inspiration({ colors, combinations }: Props) {
     <PageContainer>
       <ButtonContainer $background={createRandomCombinationCssGradient()}>
         <StyledButton onClick={() => router.push("inspiration/color-picker")}>
-          Color Picker
+          {t('pages.colorPicker')}
         </StyledButton>
 
         <StyledButton
@@ -52,7 +54,7 @@ export default function Inspiration({ colors, combinations }: Props) {
             )
           }
         >
-          Random Color
+          {t('pages.randomColor')}
         </StyledButton>
 
         <StyledButton
@@ -60,11 +62,11 @@ export default function Inspiration({ colors, combinations }: Props) {
             router.push(`/combinations/${Math.floor(Math.random() * 348)}`)
           }
         >
-          Random Combination
+          {t('pages.randomCombination')}
         </StyledButton>
 
         <EasterEgg href={`/combinations/${randomCombination?.id || 276}`}>
-          Background Combination
+          {t('pages.backgroundCombination')}
         </EasterEgg>
       </ButtonContainer>
     </PageContainer>

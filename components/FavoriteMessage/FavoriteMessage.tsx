@@ -1,6 +1,7 @@
 "use client";
 
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   showFavMessage: boolean;
@@ -8,9 +9,11 @@ type Props = {
 };
 
 export default function FavoriteMessage({ showFavMessage, isFavorite }: Props) {
+  const { t } = useTranslation();
+  
   return (
     <FavMessage $showFavMessage={showFavMessage}>
-      {isFavorite ? "Saved to Favorites" : "Removed from Favorites"}
+      {isFavorite ? t('actions.savedToFavorites') : t('actions.removedFromFavorites')}
     </FavMessage>
   );
 }

@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ImArrowDown } from "react-icons/im";
 import { ColorObject } from "@/lib/types";
+import { useTranslation } from "react-i18next";
 
 type Reducer = {
   color: ColorObject | undefined;
@@ -15,6 +16,7 @@ type Reducer = {
 export function ColorPicker({ colors }: { colors: ColorObject[] }) {
   const [closestColor, setClosestColor] = useState<ColorObject>();
   const [inputColor, setInputColor] = useState<string>("");
+  const { t } = useTranslation();
 
   function handleCompare(event: any) {
     event.preventDefault();
@@ -39,7 +41,7 @@ export function ColorPicker({ colors }: { colors: ColorObject[] }) {
     <PageContainer>
       <StyledForm onSubmit={handleCompare}>
         <label htmlFor="color">
-          <h1>Pick a Color</h1>
+          <h1>{t('pages.pickAColor')}</h1>
         </label>
         <Arrow />
 
@@ -50,13 +52,13 @@ export function ColorPicker({ colors }: { colors: ColorObject[] }) {
           onChange={(e) => setInputColor(e.target.value)}
         />
         {inputColor && (
-          <StyledButton type="submit">Find from collection</StyledButton>
+          <StyledButton type="submit">{t('pages.findFromCollection')}</StyledButton>
         )}
       </StyledForm>
 
       {closestColor && (
         <ResultContainer>
-          <p>The most similar color from the collection:</p>
+          <p>{t('pages.mostSimilarColor')}</p>
           <StyledLink
             href={`/colors/${closestColor?.slug}`}
             $hex={closestColor?.hex}

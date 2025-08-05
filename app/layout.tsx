@@ -7,6 +7,7 @@ import localFont from "next/font/local";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { FavoritesProvider } from "@/components/FavoritesProvider/FavoritesProvider";
+import "../lib/i18n";
 
 export const metadata: Metadata = {
   title: "A Dictionary of Color Combinations",

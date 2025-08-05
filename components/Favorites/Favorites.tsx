@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { ActionContext } from "../Layout/Layout";
 import { createCombinationArray } from "@/utils/helper";
 import { useFavorites } from "../FavoritesProvider/FavoritesProvider";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   colors: ColorObject[];
@@ -15,6 +16,7 @@ type Props = {
 
 export function Favorites({ colors }: Props) {
   const { favoriteCombinations, favoriteColors } = useFavorites();
+  const { t } = useTranslation();
 
   const actionContext = useContext(ActionContext);
 
@@ -40,10 +42,10 @@ export function Favorites({ colors }: Props) {
   return (
     <PageContainer>
       {favoriteColorsList.length === 0 && listType === "colors" && (
-        <NoFavoritesInfo>No favorite colors.</NoFavoritesInfo>
+        <NoFavoritesInfo>{t('pages.noFavoriteColors')}</NoFavoritesInfo>
       )}
       {favoriteCombinationsList.length === 0 && listType === "combinations" && (
-        <NoFavoritesInfo>No favorite combinations.</NoFavoritesInfo>
+        <NoFavoritesInfo>{t('pages.noFavoriteCombinations')}</NoFavoritesInfo>
       )}
       {listType === "colors" && <ColorsList colors={favoriteColorsList} />}
       {listType === "combinations" && (

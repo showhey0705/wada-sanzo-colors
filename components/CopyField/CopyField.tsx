@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   value: string | number[];
@@ -16,6 +17,8 @@ export default function CopyField({
   function handleCopy() {
     navigator.clipboard.writeText(value.toString());
   }
+  
+  const { t } = useTranslation();
 
   return (
     <StyledButton
@@ -25,7 +28,7 @@ export default function CopyField({
         onShowMessage();
       }}
     >
-      copy {label}
+      {t(`actions.copy${label}`)}
     </StyledButton>
   );
 }
