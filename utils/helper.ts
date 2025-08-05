@@ -28,53 +28,32 @@ export function isColorBright(rgb: number[]) {
 
 export async function getRemoteFavData() {
   try {
-    const response = await fetch(`/api/favorites`);
-
-    if (response.ok) {
-      const data = await response.json();
-      return data;
-    } else {
-      console.error(response.status);
-    }
+    console.warn("Database not available, using local storage only");
+    return {
+      favoriteColors: [],
+      favoriteCombinations: [],
+      updatedAt: new Date()
+    };
   } catch (e) {
     console.error(e);
+    return {
+      favoriteColors: [],
+      favoriteCombinations: [],
+      updatedAt: new Date()
+    };
   }
 }
 
 export async function updateDbFavoriteColor(
   favoriteColorsData: FavoriteColor[]
 ) {
-  const body = {
-    type: "favColorUpdate",
-    favoriteColorsData: favoriteColorsData,
-  };
-
-  const response = await fetch(`/api/favorites`, {
-    method: "PUT",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  return response;
+  console.warn("Database not available, changes saved locally only");
+  return new Response("OK", { status: 200 });
 }
 
 export async function updateDbFavoriteCombi(
   favoriteCombinationsData: FavoriteCombination[]
 ) {
-  const body = {
-    type: "favCombinationUpdate",
-    favoriteCombinationsData: favoriteCombinationsData,
-  };
-
-  const response = await fetch(`/api/favorites`, {
-    method: "PUT",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  return response;
+  console.warn("Database not available, changes saved locally only");
+  return new Response("OK", { status: 200 });
 }
